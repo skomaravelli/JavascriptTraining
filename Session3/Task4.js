@@ -2,7 +2,7 @@
 
 function createSecretHolder(secret) {
   return {
-    getSecret: function() { return secret;},
-    setSecret: function(value) { return secret = value;}
- };
+    getSecret: function () { return secret; },
+    setSecret: function (value) { return secret = value; }
+  };
 }

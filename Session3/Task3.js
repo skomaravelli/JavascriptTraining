@@ -2,15 +2,13 @@
 
 function createFunctions(n) {
   var callbacks = [];
- 
-  for (var i=0; i<n; i++) {
-   (function(){
-    var call = i;
-    callbacks.push(function() {
-      return call;
-    });
-   }());
+  for (var i = 0; i < n; i++) {
+    (function () {
+      var call = i;
+      callbacks.push(function () {
+        return call;
+      });
+    }());
   }
-  
   return callbacks;
 }
