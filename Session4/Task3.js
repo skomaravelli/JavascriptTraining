@@ -1,3 +1,5 @@
+//-	http://www.codewars.com/kata/function-cache
+
 function cache(func) {
   var cached = {};
   return function() {

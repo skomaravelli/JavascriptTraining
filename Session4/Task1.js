@@ -1,3 +1,5 @@
+// -	http://www.codewars.com/kata/using-closures-to-share-class-state
+
 // Let's make a Cat constructor!
 var Cat = (function () {
   var name = '', arr = [];

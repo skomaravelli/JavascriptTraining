@@ -1,3 +1,5 @@
+//-	http://www.codewars.com/kata/extract-nested-object-reference
+
 Object.prototype.hash = function (string) {
     var arr = string.split('.'), property = this;
     for (i = 0; i < arr.length; i++) {

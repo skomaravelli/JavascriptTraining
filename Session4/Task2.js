@@ -1,3 +1,5 @@
+//-	http://www.codewars.com/kata/a-chain-adding-function
+
 function add(n) {
   // Let the currying begin!
   var sum = function(x) {
