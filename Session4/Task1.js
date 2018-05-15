@@ -1,25 +1,36 @@
+// Let's make a Cat constructor!
 var Cat = (function () {
-  var name = '', weight = '';
-  var module = {}; 
-  
+  var name = '', arr = [];
   function Cat(name, weight) {
-        this.name = name;
-        weight = weight;
-        // console.log(weight);
+    var _weight = 0;
+    this.name = name;
+    if (typeof name === 'undefined' || typeof weight === 'undefined') {
+      throw new TypeError('');
     }
-   console.log(weight);
-    Object.defineProperty(module, "averageWeight", {
-		get: function() {
-			return Cat.weight;
-		},
-		set: function(value) {
-			Cat.weight = Cat.weight + value;
-		}
-	});
-  
-    Cat.averageWeight = function() {
-		  console.log(Cat.weight);
-    }
-    
+    arr.push(weight);
+
+    Object.defineProperty(this, "weight", {
+      get: function () {
+        return _weight;
+      },
+      set: function (value) {
+        var indexToSplice = arr.indexOf(_weight);
+        if (indexToSplice > -1) {
+          arr.splice(indexToSplice, 1, value);
+        }
+        _weight = value;
+      }
+    });
+
+    this.weight = weight;
+  }
+
+  Cat.averageWeight = function () {
+    var avg = arr.reduce(function (a, b) {
+      return a + b;
+    }, 0);
+    return avg / arr.length;
+  }
+
   return Cat;
 }());
